@@ -1,8 +1,10 @@
-import ResultListView from './views/app';
+import ResultListView from '../views/app';
 
 export default class AppController {
-  constructor(appElement) {
+  constructor(appElement, apiKey) {
     this.appElement = appElement;
+    this.apiKey = apiKey;
+    // console.log(apiKey);
     this.model = [];
   }
 
@@ -13,8 +15,8 @@ export default class AppController {
         .then((data) => {
           this.model = data;
 
-          const resultView = new ResultListView(this.appElement.querySelector('.results-grid__item'), this.model);
-          resultView.render();
+          // const resultView = new ResultListView(this.appElement.querySelector('.results-grid__item'), this.model);
+          // resultView.render();
         });
   }
 }

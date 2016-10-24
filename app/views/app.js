@@ -14,9 +14,9 @@ export default class ResultListView {
       <h2 class="result__name"></h2>
       <p class="result__year"></p>`;
 
-      row.querySelector('.result__logo').innerText = result.logo;
+      row.querySelector('.result__logo').innerText = result.images.icon;
       row.querySelector('.result__name').innerText = result.name;
-      row.querySelector('.result__year').innerText = result.year;
+      row.querySelector('.result__year').innerText = result.established;
 
       this.el.appendChild(row);
     });
