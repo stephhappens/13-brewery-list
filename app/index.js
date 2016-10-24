@@ -1,3 +1,1 @@
 import 'whatwg-fetch';
-
-x
