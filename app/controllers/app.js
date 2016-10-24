@@ -13,9 +13,9 @@ export default class AppController {
     fetch(`http://tiy-brewery-proxy.herokuapp.com/v2/breweries?key=${this.apiKey}&established=2015`)
         .then((res) => res.json())
         .then((data) => {
-          this.model = data;
+          this.model = data.data;
 
-          const resultView = new ResultListView(this.appElement.querySelector('.results-grid__item'), this.model);
+          const resultView = new ResultListView(this.appElement.querySelector('.grid'), this.model);
           resultView.render();
         });
   }
