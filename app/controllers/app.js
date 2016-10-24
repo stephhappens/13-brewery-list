@@ -15,8 +15,8 @@ export default class AppController {
         .then((data) => {
           this.model = data;
 
-          // const resultView = new ResultListView(this.appElement.querySelector('.results-grid__item'), this.model);
-          // resultView.render();
+          const resultView = new ResultListView(this.appElement.querySelector('.results-grid__item'), this.model);
+          resultView.render();
         });
   }
 }
