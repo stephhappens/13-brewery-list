@@ -1,6 +1,8 @@
 'use strict';
 /* eslint-env node */
 
+require('dotenv').config();
+
 const Merge = require('broccoli-merge-trees');
 const Sass = require('broccoli-sass-source-maps');
 const LiveReload = require('broccoli-inject-livereload');
@@ -11,6 +13,7 @@ const Babel = require('broccoli-babel-transpiler');
 const mv = require('broccoli-stew').mv;
 const rm = require('broccoli-stew').rm;
 const browserify = require('broccoli-browserify-cache');
+const envify = require('envify');
 
 let pubFiles = new LiveReload('public');
 
@@ -29,6 +32,9 @@ const babelScript = new Babel(appNoSass);
 const appScript = browserify(babelScript, {
   entries: ['./index'],
   outputFile: 'app.js',
+  config(brow) {
+    brow.transform(envify);
+  },
 });
 
 const compiledSass = new Sass(stylePaths, 'app.scss', 'app.css', {});
