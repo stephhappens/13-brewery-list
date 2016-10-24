@@ -6,17 +6,17 @@ export default class ResultListView {
 
   render() {
     this.model.forEach((result) => {
-      const row = document.createElement('tr');
+      const row = document.createElement('div');
       row.classList.add('result');
 
       row.innerHTML = `
-      <img class="result__logo"></td>
+      <img class="result__logo" src="">
       <h2 class="result__name"></h2>
       <p class="result__year"></p>`;
 
-      row.querySelector('.result__logo').innerText = result.time;
-      row.querySelector('.result__name').innerText = result.user;
-      row.querySelector('.result__year').innerText = result.bpm;
+      row.querySelector('.result__logo').innerText = result.logo;
+      row.querySelector('.result__name').innerText = result.name;
+      row.querySelector('.result__year').innerText = result.year;
 
       this.el.appendChild(row);
     });
