@@ -14,6 +14,9 @@ export default class AppController {
         .then((res) => res.json())
         .then((data) => {
           this.model = data.data;
+          this.model.forEach((brewery) => {
+            brewery.name = brewery.name.replace(/ brew.*/i, '');
+          });
 
           const resultView = new ResultListView(this.appElement.querySelector('.grid'), this.model);
           resultView.render();

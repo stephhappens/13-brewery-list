@@ -37,16 +37,21 @@
 }
 
 .result {
-  // flex-grow: 1;
+  flex-grow: 1;
   // flex-direction: column;
   margin: 1rem;
   width: calc(100% / 3 - 2rem);
+  min-width: 18rem;
   flex-wrap: wrap;
   background: white;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 
+}
+
+.result__content {
+  padding: 1rem;
 }
 
 .result__logo {
@@ -65,7 +70,11 @@
 }
 
 .result__logo-photo {
-  width: 3rem;
+  width: 5rem;
   height: 5rem;
   // object-fit: cover;
+}
+
+.result__year {
+  text-transform: uppercase;
 }
