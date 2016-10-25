@@ -25,7 +25,7 @@ export default class ResultListView {
       }
 
       row.querySelector('.result__name').innerText = result.name;
-      row.querySelector('.result__year').innerText = result.established;
+      row.querySelector('.result__year').innerText = 'est. ' + result.established;
 
       this.el.appendChild(row);
     });
